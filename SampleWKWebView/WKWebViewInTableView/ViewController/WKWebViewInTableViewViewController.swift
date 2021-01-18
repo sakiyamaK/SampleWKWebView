@@ -11,7 +11,6 @@ import RxCocoa
 import RxOptional
 import RxGesture
 
-
 final class WKWebViewInTableViewViewController: UIViewController {
 
   let htmlStr = "<p><strong>コンテンポラリーダンス</strong>と食と酒が絡まりあった現代のディナーショー。4時間の日常と非日常。最後は観客も巻き込んだ都会の大人のピクニック！ダンスだけじゃなく、歌や芝居など何が起きるかわかりません。</p><p></p><p><a href=\"https://artsticker.app\" rel=\"noopener\">リンク</a><strong>太字</strong></p>"

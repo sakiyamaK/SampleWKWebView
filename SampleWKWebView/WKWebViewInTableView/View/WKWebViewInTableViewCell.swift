@@ -15,7 +15,7 @@ final class WKWebViewInTableViewCell: UITableViewCell {
 
   @IBOutlet private weak var webView: WKWebView! {
     didSet {
-        //      webView.scrollView.isScrollEnabled = false
+        webView.scrollView.isScrollEnabled = false
         webView.uiDelegate = self
         webView.navigationDelegate = self
     }

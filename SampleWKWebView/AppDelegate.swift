@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Template_iOSUIKit
+//  SampleWKWebView
 //
 //  Created by sakiyamaK on 2021/01/16.
 //

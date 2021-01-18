@@ -1,6 +1,6 @@
 //
-//  Template_iOSUIKitTests.swift
-//  Template_iOSUIKitTests
+//  SampleWKWebViewTests.swift
+//  SampleWKWebViewTests
 //
 //  Created by sakiyamaK on 2021/01/17.
 //
@@ -8,15 +8,15 @@
 import XCTest
 import Quick
 import Nimble
-@testable import Template_iOSUIKit
+@testable import SampleWKWebView
 
-class Template_iOSUIKitTests: QuickSpec {
+class SampleWKWebViewTests: QuickSpec {
 
   override func spec() {
     describe("Nimble Tests") {
       context("成功例") {
         it("同じ") {
-          expect(1+1).to(equal(3))
+          expect(1+1).to(equal(2))
           expect(1+1) == 2
           expect(1+1).toNot(equal(3))
           expect(1+1) != 3

@@ -41,6 +41,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="wKWebViewButton" destination="zyV-3Z-pkT" id="p0p-O3-8jl"/>
                         <outlet property="wKWebViewInTableViewButton" destination="qvW-CC-gLz" id="Jss-wr-lMy"/>
                     </connections>
                 </viewController>

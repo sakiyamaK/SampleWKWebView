@@ -84,8 +84,8 @@ jobs:
         xcodebuild
         -sdk iphonesimulator
         -configuration Debug
-        -workspace Template_iOSUIKit.xcworkspace
-        -scheme Template_iOSUIKit
+        -workspace SampleWKWebView.xcworkspace
+        -scheme SampleWKWebView
         build
         | bundle exec xcpretty
 
@@ -95,8 +95,8 @@ jobs:
         xcodebuild
         -sdk iphonesimulator
         -configuration Debug
-        -workspace Template_iOSUIKit.xcworkspace
-        -scheme Template_iOSUIKit
+        -workspace SampleWKWebView.xcworkspace
+        -scheme SampleWKWebView
         -destination 'platform=iOS Simulator,name=iPhone 12'
         clean test
         | bundle exec xcpretty --report html
