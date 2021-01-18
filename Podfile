@@ -6,4 +6,10 @@ target 'SampleWKWebView' do
   
   pod 'R.swift'
 
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxOptional'
+  pod 'RxGesture'
+  pod 'NSObject+Rx'
 end
