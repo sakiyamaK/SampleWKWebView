@@ -1,0 +1,7 @@
+# coverage_service: cobertura_xml
+# source_directory: SampleWKWebViewTests
+xcodeproj: SampleWKWebView.xcodeproj
+workspace: SampleWKWebView.xcworkspace
+scheme: SampleWKWebView
+ignore:
+  - Pods/*
