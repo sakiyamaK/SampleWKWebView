@@ -12,7 +12,6 @@ import WebKit
 final class WKWebViewInTableViewCell: UITableViewCell {
 
   private let localBaseURL = URL(string: "local_file_url")
-//  private let observerKey = "webView.scrollView.contentSize"
   private var observeLoading: NSKeyValueObservation?
   var tapLink: ((URL) -> Void)?
 
@@ -32,6 +31,15 @@ final class WKWebViewInTableViewCell: UITableViewCell {
       webView.scrollView.isScrollEnabled = false
       webView.uiDelegate = self
       webView.navigationDelegate = self
+      self.observeLoading = webView.observe(\.scrollView.contentSize, options: [.new]) {[weak self] (webView, change) in
+        let newHeight = webView.scrollView.subviews.first!.frame.height
+        if self?.webViewHeightConstraint.constant != newHeight {
+          self?.webViewHeightConstraint.constant = newHeight
+          self?.setNeedsLayout()
+          self?.layoutIfNeeded()
+          self?.loadCompletion?(self?.cellHeight ?? 0)
+        }
+      }
     }
   }
 
@@ -42,15 +50,6 @@ final class WKWebViewInTableViewCell: UITableViewCell {
   func configure(htmlStr: String, loadCompletion: ((CGFloat) -> Void)? = nil) {
     self.loadCompletion = loadCompletion
     webView?.loadHTMLString(htmlStr.htmlString(family: nil, size: 22), baseURL: localBaseURL)
-    self.observeLoading = webView.observe(\.scrollView.contentSize, options: [.new]) {[weak self] (webView, change) in
-      let newHeight = webView.scrollView.subviews.first!.frame.height
-      if self?.webViewHeightConstraint.constant != newHeight {
-        self?.webViewHeightConstraint.constant = newHeight
-        self?.setNeedsLayout()
-        self?.layoutIfNeeded()
-        self?.loadCompletion?(self?.cellHeight ?? 0)
-      }
-    }
   }
 
   static func heightFor(width: CGFloat, htmlStr: String, loadCompletion: ((CGFloat) -> Void)? = nil ) {
@@ -63,7 +62,6 @@ final class WKWebViewInTableViewCell: UITableViewCell {
 
 extension WKWebViewInTableViewCell: WKUIDelegate {
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    DLog("---- finish -------")
   }
 
   func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
