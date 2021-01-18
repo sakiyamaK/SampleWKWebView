@@ -12,4 +12,10 @@ target 'SampleWKWebView' do
   pod 'RxOptional'
   pod 'RxGesture'
   pod 'NSObject+Rx'
+
+  # Debug
+  pod "HyperioniOS/Core", :configurations => ['Debug']
+  pod 'HyperioniOS/AttributesInspector', :configurations => ['Debug']
+  pod 'HyperioniOS/Measurements', :configurations => ['Debug']
+
 end

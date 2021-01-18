@@ -14,13 +14,14 @@ extension String {
 <html>
     <head>
         <style>
-            p { margin: 0; }
-            a { color: black; }
             html * {
-                font-size: \(size)pt !important;
-                line-height: \(size*2)pt !important;
-                font-family: \(family ?? "Helvetica"), Helvetica !important;
+              margin: 0px;
+              padding: 0px;
+              font-size: \(size)pt !important;
+              line-height: \(size*2)pt !important;
+              font-family: \(family ?? "Helvetica"), Helvetica !important;
             }
+            a { color: black; }
         </style>
     </head>
     <body>

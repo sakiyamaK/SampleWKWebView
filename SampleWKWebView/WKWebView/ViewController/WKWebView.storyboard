@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="En9-k0-huV">
+                            <wkWebView contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="En9-k0-huV">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -27,13 +27,19 @@
                             </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pCa-So-l22"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
-                            <constraint firstItem="pCa-So-l22" firstAttribute="bottom" secondItem="En9-k0-huV" secondAttribute="bottom" id="Jdh-5d-rAM"/>
+                            <constraint firstItem="pCa-So-l22" firstAttribute="bottom" secondItem="En9-k0-huV" secondAttribute="bottom" priority="250" id="Jdh-5d-rAM"/>
                             <constraint firstAttribute="trailing" secondItem="En9-k0-huV" secondAttribute="trailing" id="LNH-hW-7CN"/>
+                            <constraint firstItem="pCa-So-l22" firstAttribute="bottom" secondItem="En9-k0-huV" secondAttribute="bottom" id="Ozs-x8-VpQ"/>
                             <constraint firstItem="En9-k0-huV" firstAttribute="leading" secondItem="pCa-So-l22" secondAttribute="leading" id="UWa-Dd-gi3"/>
                             <constraint firstItem="En9-k0-huV" firstAttribute="top" secondItem="pCa-So-l22" secondAttribute="top" id="wyk-S7-xcc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jdh-5d-rAM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="webView" destination="En9-k0-huV" id="xHj-dv-BS4"/>
@@ -45,8 +51,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
