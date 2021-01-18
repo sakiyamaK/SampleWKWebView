@@ -35,23 +35,6 @@ final class WKWebViewInTableViewCell: UITableViewCell {
     }
   }
 
-  var subViewTransform: CGAffineTransform {
-    var view = webView.subviews.first
-    var transform = view?.transform ?? .identity
-    while true {
-      if transform != .identity {
-        DLog(view)
-        return transform
-      }
-      view = view?.subviews.first
-      if view == nil {
-        DLog(view)
-        return transform
-      }
-      transform = view!.transform
-    }
-  }
-
   override func prepareForReuse() {
     super.prepareForReuse()
     self.removeObserver(self, forKeyPath: observerKey)
